@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XF_PWGen.PWGenPage"
+             Title="Password Generator">
+    <ContentPage.Content>
+        <StackLayout Margin="20">
+
+            <Editor/>
+
+            <Button Text="Generate!" Clicked="btGenerate_Clicked"/> <!--Eseménykezelő létrehozása-->
+            <Button Text="Copy Password" Command="btCopy_Command"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

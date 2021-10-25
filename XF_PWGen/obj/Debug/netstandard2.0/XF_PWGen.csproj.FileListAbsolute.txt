@@ -1,0 +1,17 @@
+C:\Users\kovac\source\repos\XF_PWGen\XF_PWGen\bin\Debug\netstandard2.0\XF_PWGen.deps.json
+C:\Users\kovac\source\repos\XF_PWGen\XF_PWGen\bin\Debug\netstandard2.0\XF_PWGen.dll
+C:\Users\kovac\source\repos\XF_PWGen\XF_PWGen\bin\Debug\netstandard2.0\ref\XF_PWGen.dll
+C:\Users\kovac\source\repos\XF_PWGen\XF_PWGen\bin\Debug\netstandard2.0\XF_PWGen.pdb
+C:\Users\kovac\source\repos\XF_PWGen\XF_PWGen\obj\Debug\netstandard2.0\XF_PWGen.csproj.AssemblyReference.cache
+C:\Users\kovac\source\repos\XF_PWGen\XF_PWGen\obj\Debug\netstandard2.0\XF_PWGen.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kovac\source\repos\XF_PWGen\XF_PWGen\obj\Debug\netstandard2.0\AboutPage.xaml.g.cs
+C:\Users\kovac\source\repos\XF_PWGen\XF_PWGen\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\kovac\source\repos\XF_PWGen\XF_PWGen\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\kovac\source\repos\XF_PWGen\XF_PWGen\obj\Debug\netstandard2.0\PWGenPage.xaml.g.cs
+C:\Users\kovac\source\repos\XF_PWGen\XF_PWGen\obj\Debug\netstandard2.0\XF_PWGen.AssemblyInfoInputs.cache
+C:\Users\kovac\source\repos\XF_PWGen\XF_PWGen\obj\Debug\netstandard2.0\XF_PWGen.AssemblyInfo.cs
+C:\Users\kovac\source\repos\XF_PWGen\XF_PWGen\obj\Debug\netstandard2.0\XF_PWGen.csproj.CoreCompileInputs.cache
+C:\Users\kovac\source\repos\XF_PWGen\XF_PWGen\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\kovac\source\repos\XF_PWGen\XF_PWGen\obj\Debug\netstandard2.0\XF_PWGen.dll
+C:\Users\kovac\source\repos\XF_PWGen\XF_PWGen\obj\Debug\netstandard2.0\ref\XF_PWGen.dll
+C:\Users\kovac\source\repos\XF_PWGen\XF_PWGen\obj\Debug\netstandard2.0\XF_PWGen.pdb
