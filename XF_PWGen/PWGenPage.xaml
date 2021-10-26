@@ -3,13 +3,82 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XF_PWGen.PWGenPage"
              Title="Password Generator">
+    
+
     <ContentPage.Content>
-        <StackLayout Margin="20">
+        <StackLayout Margin="20" >
+            <Label Text="Your Password: "/>
+            <Editor Text="" x:Name="edPassword" IsReadOnly="True"/> <!--ide megy a generált pw-->
+          
 
-            <Editor/>
+            <Label Text="Password length:"/>
+            <Picker Title="Choose a number!" x:Name="pckLength"> <!--hány karakter hosszú legyen a pw-->
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:Int16}">
+                        <x:Int16 >6</x:Int16>
+                        <x:Int16>7</x:Int16>
+                        <x:Int16>8</x:Int16>
+                        <x:Int16>9</x:Int16>
+                        <x:Int16>10</x:Int16>
+                        <x:Int16>11</x:Int16>
+                        <x:Int16>12</x:Int16>
+                        <x:Int16>13</x:Int16>
+                        <x:Int16>14</x:Int16>
+                        <x:Int16>15</x:Int16>
+                        <x:Int16>16</x:Int16>
 
-            <Button Text="Generate!" Clicked="btGenerate_Clicked"/> <!--Eseménykezelő létrehozása-->
-            <Button Text="Copy Password" Command="btCopy_Command"/>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+            
+            <Grid ColumnDefinitions="0.75*,0.25*,1*"  RowDefinitions="4" VerticalOptions="CenterAndExpand" Margin="2"> <!--felosztás ponttal, nem vesszővel!!!4!-->
+
+                <Label Text="Include Symbols:" Grid.Row="1" Grid.Column="0" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                <CheckBox Grid.Row="1" Grid.Column="1" VerticalOptions="Center"/>
+                <Label Text="( e.g. @#$% )" Grid.Row="1" Grid.Column="2" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+
+                <Label Text="Include Numbers:" Grid.Row="2" Grid.Column="0" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                <CheckBox Grid.Row="2" Grid.Column="1" VerticalOptions="Center"/>
+                <Label Text="( e.g. 123456 )" Grid.Row="2" Grid.Column="2" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+
+                <Label Text="Include Lowercase Characters:" Grid.Row="3" Grid.Column="0" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                <CheckBox Grid.Row="3" Grid.Column="1" VerticalOptions="Center"/>
+                <Label Text="( e.g. abcdefgh )" Grid.Row="3" Grid.Column="2" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+
+                <Label Text="Include Uppercase Characters:" Grid.Row="4" Grid.Column="0" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                <CheckBox Grid.Row="4" Grid.Column="1" VerticalOptions="Center"/>
+                <Label Text="( e.g. ABCDEFGH )" Grid.Row="4" Grid.Column="2" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+
+                <Label Text="Exclude Ambiguous Characters:" Grid.Row="5" Grid.Column="0" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                <CheckBox Grid.Row="5" Grid.Column="1" VerticalOptions="Center"/>
+                <Label Text="( { } [ ] ( ) / \ '  ` ~ , ; : . )" Grid.Row="5" Grid.Column="2" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+
+
+
+
+                <!--
+                <Label Text="Include Numbers:" Grid.Row="2" Grid.Column="1" VerticalOptions="Center"/>
+                <RadioButton Content="( e.g. 123456 )" Grid.Row="2" Grid.Column="2" FontSize="Small" VerticalOptions="Center"/>
+
+                <Label Text="Include Lowercase Characters:" Grid.Row="3" Grid.Column="1" VerticalOptions="Center"/>
+                <RadioButton Content="( e.g. abcdefgh )" Grid.Row="3" Grid.Column="2" FontSize="Small" VerticalOptions="Center"/>
+
+                <Label Text="Include Uppercase Characters:" Grid.Row="4" Grid.Column="1" VerticalOptions="Center"/>
+                <RadioButton Content="( e.g. ABCDEFGH )" Grid.Row="4" Grid.Column="2" FontSize="Small" VerticalOptions="Center"/>
+
+                <Label Text="Exclude Ambiguous Characters::" Grid.Row="5" Grid.Column="1" VerticalOptions="CenterAndExpand"/>
+                <RadioButton Content="( { } [ ] ( ) / \ '  ` ~ , ; : .)" Grid.Row="5" Grid.Column="2" FontSize="Small" VerticalOptions="CenterAndExpand"/>
+-->
+
+            </Grid>
+
+
+
+
+
+            <Label/>
+            <Button Text="Generate!" Clicked="btGenerate_Clicked"/> <!--Eseménykezelők létrehozása-->
+            <Button Text="Copy Password" Clicked="btCopy_Command"/>
 
         </StackLayout>
     </ContentPage.Content>

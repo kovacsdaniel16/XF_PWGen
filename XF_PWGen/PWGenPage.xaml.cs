@@ -21,5 +21,10 @@ namespace XF_PWGen
         {
 
         }
+
+        private void btCopy_Command(object sender, EventArgs e)
+        {
+
+        }
     }
 }
