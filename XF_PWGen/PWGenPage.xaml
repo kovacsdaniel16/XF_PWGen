@@ -33,24 +33,24 @@
             
             <Grid ColumnDefinitions="0.75*,0.25*,1*"  RowDefinitions="4" VerticalOptions="CenterAndExpand" Margin="2"> <!--felosztás ponttal, nem vesszővel!!!4!-->
 
-                <Label Text="Include Symbols:" Grid.Row="1" Grid.Column="0" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
-                <CheckBox Grid.Row="1" Grid.Column="1" VerticalOptions="Center"/>
+                <Label Text="Include Symbols:" Grid.Row="1" Grid.Column="0" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/> <!--Táblázat három oszloppal, 1. Label, 2. ch.box, 3 label-->
+                <CheckBox x:Name="cbSymbols" Grid.Row="1" Grid.Column="1" VerticalOptions="Center" Color="Gray"/>
                 <Label Text="( e.g. @#$% )" Grid.Row="1" Grid.Column="2" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
 
                 <Label Text="Include Numbers:" Grid.Row="2" Grid.Column="0" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
-                <CheckBox Grid.Row="2" Grid.Column="1" VerticalOptions="Center"/>
+                <CheckBox x:Name="cbNumbers" Grid.Row="2" Grid.Column="1" VerticalOptions="Center" Color="Gray"/>
                 <Label Text="( e.g. 123456 )" Grid.Row="2" Grid.Column="2" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
 
                 <Label Text="Include Lowercase Characters:" Grid.Row="3" Grid.Column="0" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
-                <CheckBox Grid.Row="3" Grid.Column="1" VerticalOptions="Center"/>
+                <CheckBox x:Name="cbLower" Grid.Row="3" Grid.Column="1" VerticalOptions="Center" Color="Gray"/>
                 <Label Text="( e.g. abcdefgh )" Grid.Row="3" Grid.Column="2" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
 
                 <Label Text="Include Uppercase Characters:" Grid.Row="4" Grid.Column="0" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
-                <CheckBox Grid.Row="4" Grid.Column="1" VerticalOptions="Center"/>
+                <CheckBox x:Name="cbUpper" Grid.Row="4" Grid.Column="1" VerticalOptions="Center" Color="Gray"/>
                 <Label Text="( e.g. ABCDEFGH )" Grid.Row="4" Grid.Column="2" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
 
                 <Label Text="Exclude Ambiguous Characters:" Grid.Row="5" Grid.Column="0" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
-                <CheckBox Grid.Row="5" Grid.Column="1" VerticalOptions="Center"/>
+                <CheckBox x:Name="cbExcl" Grid.Row="5" Grid.Column="1" VerticalOptions="Center" Color="Gray"/>
                 <Label Text="( { } [ ] ( ) / \ '  ` ~ , ; : . )" Grid.Row="5" Grid.Column="2" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
 
 

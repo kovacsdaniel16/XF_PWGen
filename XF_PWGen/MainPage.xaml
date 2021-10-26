@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             xmlns:local="clr-namespace:XF_PWGen"
              x:Class="XF_PWGen.MainPage"
-            Title="Password Generator">
+            Title="Password Generator"
+            >
 
     <local:PWGenPage/>
     <local:AboutPage/>
