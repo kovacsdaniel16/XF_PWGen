@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Xamarin.Essentials;
+
 
 namespace XF_PWGen
 {
@@ -25,6 +27,7 @@ namespace XF_PWGen
         public PWGenPage()
         {
             InitializeComponent();
+
         }
 
         private void btGenerate_Clicked(object sender, EventArgs e)
@@ -36,9 +39,21 @@ namespace XF_PWGen
 
         }
 
-        private void btCopy_Command(object sender, EventArgs e)
+        private void btCopy_Command(object sender, EventArgs e) //kész
         {
             //ed.Password mezőt kellene vágólapra másolni
+
+            if (!string.IsNullOrEmpty(edPassword.Text))
+            {
+                Clipboard.SetTextAsync(edPassword.Text);
+
+                DisplayAlert("Accept", "Password: '"+edPassword.Text+"' is copied to Clipboard!", "Ok");
+
+            }
+            else DisplayAlert("Error", "Password field is empty", "Ok");
+
+
         }
+       
     }
 }

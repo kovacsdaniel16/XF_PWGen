@@ -79,6 +79,8 @@
             <Label/>
             <Button Text="Generate!" Clicked="btGenerate_Clicked"/> <!--Eseménykezelők létrehozása-->
             <Button Text="Copy Password" Clicked="btCopy_Command"/>
+            
+            
 
         </StackLayout>
     </ContentPage.Content>
