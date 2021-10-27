@@ -22,20 +22,42 @@ namespace XF_PWGen
         //CheckBox UpperCase >> cbUpper
         //CheckBox Exclude >> cbExcl
 
-        string Password; //ebben a strinben fog tárolódni a jelszó
-
+        char[] Password; //ebben a strinben fog tárolódni a jelszó
+        int x; //a picker indexe
+        string szam; //a pickerben tárolt szám
+        
+        
         public PWGenPage()
         {
             InitializeComponent();
-
         }
 
         private void btGenerate_Clicked(object sender, EventArgs e)
         {
             //Password = GeneratePassword.getPassword(pckLength);
             //GeneratePassword osztály/getpassword függvény (paraméter egy int ami a jsz. hossza)
+            //////////////////////////////////////////////////////
+            /* Picker numberPicker = (Picker) sender;
+             index = numberPicker.SelectedIndex;
+             picker = new int[index];*/ //zsákutca
 
-            edPassword.Text = "Hello World!";
+             x = pckLength.SelectedIndex; //int x--> a picker-ben lévő int[] indexe DE!! ha nincs kitöltve -1
+
+
+            if (x != -1) szam = pckLength.Items[x]; //ha nincs kiválasztva szám, -1-et kapunk, így logikai vizsálat kell végezni
+
+            else
+            {
+                DisplayAlert("Error!", "Please select a number!", "Ok");
+                return;
+            }
+
+            ////////////////////////////////////////////////////////
+            GeneratePassword pg = new GeneratePassword(Convert.ToInt32(szam));
+
+           
+
+            //edPassword.Text = 
 
         }
 
@@ -54,6 +76,12 @@ namespace XF_PWGen
 
 
         }
-       
+
+       /* private void pckLength_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string szam = pckLength.Items[x];
+            DisplayAlert(szam, "Selected Item", "Ok");
+        }
+       */
     }
 }
