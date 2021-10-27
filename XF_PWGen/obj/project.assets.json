@@ -540,11 +540,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kovac\\source\\repos\\XF_PWGen\\XF_PWGen\\XF_PWGen.csproj",
+      "projectUniqueName": "C:\\Users\\kovac\\source\\repos\\XF_PWGen2\\XF_PWGen\\XF_PWGen.csproj",
       "projectName": "XF_PWGen",
-      "projectPath": "C:\\Users\\kovac\\source\\repos\\XF_PWGen\\XF_PWGen\\XF_PWGen.csproj",
+      "projectPath": "C:\\Users\\kovac\\source\\repos\\XF_PWGen2\\XF_PWGen\\XF_PWGen.csproj",
       "packagesPath": "C:\\Users\\kovac\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kovac\\source\\repos\\XF_PWGen\\XF_PWGen\\obj\\",
+      "outputPath": "C:\\Users\\kovac\\source\\repos\\XF_PWGen2\\XF_PWGen\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"

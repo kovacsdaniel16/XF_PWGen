@@ -7,25 +7,24 @@ namespace XF_PWGen
 {
     internal class GeneratePassword
     {
-        public int length; //hány karakter a jelszó
-        public string[] password; //string tömb a jelszó tárolására
-        public string numb; //int tömb a számok tárolására
+       // public int length; //hány karakter a jelszó (a pwg osztályból) nem kell, mert a másik osztályból veszi
+       // public string[] password; //string tömb a jelszó tárolására
+        public string numb; //string tömb a számok tárolására
         public string lower; //...kisbetűk
         public string upper; //...nagybetűk
         public string spec; //....spec karakterek
-       // public string exc; //...esetlegesen nem kívánt karakterek
 
        
 
-        public GeneratePassword(int length)
+        public GeneratePassword(int length) //konstruktor
         {
-            PWGenPage pgw = new PWGenPage();
+            PWGenPage pgw = new PWGenPage(); //meghíjuk a pgw osztályt
 
-            this.length = length;
-            length = Convert.ToInt32(pgw.szam);
+            //this.length = length;
+            //length = Convert.ToInt32(pgw.szam);
            
             
-            password = new string[length];
+           // password = new string[length];
 
             numb = "0123456789";
 
@@ -38,7 +37,7 @@ namespace XF_PWGen
             //exc = "{}[]()/'~,;:.";
         }
 
-         public  string getPassword(int length)
+         public string getPassword(int length, string valid)
         {
             // throw new NotImplementedException();
 
@@ -46,7 +45,6 @@ namespace XF_PWGen
 
 
 
-            string valid = "asdfghjkléqwertzuioíyxcvbn";
 
             StringBuilder res = new StringBuilder();
 

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "f9nKivMMfdxIx1huU/fFGxIpMUL+sh4KsPYxZX5iV6FGLg4YQ4JjPyh6Ygwi8aPd/6l6wFEvXpKIlGVQJRAbZg==",
+  "dgSpecHash": "b3B1oCxfwAp+VHfIpJu10hTOGAe7ZKY6WgggZZAYfa0asugwTMY5/VnHDeYZGmGBy4IZrhQ01cOgw7UcsseBeg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\kovac\\source\\repos\\XF_PWGen\\XF_PWGen\\XF_PWGen.csproj",
+  "projectFilePath": "C:\\Users\\kovac\\source\\repos\\XF_PWGen2\\XF_PWGen\\XF_PWGen.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kovac\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\kovac\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",

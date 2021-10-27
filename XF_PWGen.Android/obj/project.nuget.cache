@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3RBg9sXX2h9gLJEADzxKltYB74gcKBqvS54FEsiA/3omfePpi8OW3wUeOnPuu3XNtQl6Ra8jAoCzoFarF4zbJQ==",
+  "dgSpecHash": "ZOgw0WEAJ8BK/k8KAaC/Xq7oToxWAGqK8noedibSMQPAVSGw27ZtWNnrx91xj//5dUik5qkYn7kVvGRsgTMZ/Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\kovac\\source\\repos\\XF_PWGen\\XF_PWGen.Android\\XF_PWGen.Android.csproj",
+  "projectFilePath": "C:\\Users\\kovac\\source\\repos\\XF_PWGen2\\XF_PWGen.Android\\XF_PWGen.Android.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kovac\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.androidx.activity\\1.1.0.5\\xamarin.androidx.activity.1.1.0.5.nupkg.sha512",

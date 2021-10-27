@@ -22,10 +22,10 @@ namespace XF_PWGen
         //CheckBox UpperCase >> cbUpper
         //CheckBox Exclude >> cbExcl
 
-        public string valid; //ebben a strinben fog tárolódni a jelszó
-        int x; //a picker indexe
-        public string szam; //a pickerben tárolt szám
-        //public List<string> valid;
+        public string valid; //ebben a strinben fog tárolódni a jelszó karakterkészlete
+        int x; //a pickerben tárolt számok indexe
+        public string szam; //a pickerben tárolt szám(string formában?)
+        
 
 
 
@@ -34,14 +34,9 @@ namespace XF_PWGen
             InitializeComponent();
         }
 
-        private void btGenerate_Clicked(object sender, EventArgs e)
+        private void btGenerate_Clicked(object sender, EventArgs e) //kész
         {
-            //Password = GeneratePassword.getPassword(pckLength);
-            //GeneratePassword osztály/getpassword függvény (paraméter egy int ami a jsz. hossza)
-            //////////////////////////////////////////////////////
-            /* Picker numberPicker = (Picker) sender;
-             index = numberPicker.SelectedIndex;
-             picker = new int[index];*/ //zsákutca
+            /*
 
              x = pckLength.SelectedIndex; //int x--> a picker-ben lévő int[] indexe DE!! ha nincs kitöltve -1
 
@@ -53,42 +48,15 @@ namespace XF_PWGen
                 DisplayAlert("Error!", "Please select a number!", "Ok");
                 return;
             }
+            */ // ez a kód átkerült egy másik metódusba (pckLength_SelectedIndexChanged)
+
 
             ////////////////////////////////////////////////////////
-            GeneratePassword pg = new GeneratePassword(Convert.ToInt32(szam));
-            ////////////////////////////////////////////////////////////////
-            if (cbNumbers.IsChecked)
-            {
-                valid = pg.numb;
-            }
+            GeneratePassword pg = new GeneratePassword(Convert.ToInt32(szam)); //Ha megnyomom a GENERATE gombot: 1 meghívom a GeneratePassword osztályt
             
-            if (cbLower.IsChecked)
-            {
-                valid += pg.lower;
-            }
-            if (cbUpper.IsChecked)
-            {
-                valid += pg.upper;
-            }
-            if (cbSymbols.IsChecked)
-            {
-                valid += pg.spec;
-            }
+           
 
-            /*   if (cbExcl.IsChecked)
-               {
-                   char[] seged = valid.ToCharArray();
-                   foreach (char karakter in seged)
-                   {
-                       if (karakter==)
-                       {
-
-                       }
-                   }
-               } */
-
-
-            edPassword.Text = pg.getPassword(Convert.ToInt32(szam));
+           /*!!!!!!->kimenet*/ edPassword.Text = pg.getPassword(Convert.ToInt32(szam),valid); //az edPassword mezőbe betöltöm a generált jelszót.
 
         }
 
@@ -110,11 +78,36 @@ namespace XF_PWGen
 
         }
 
-       /* private void pckLength_SelectedIndexChanged(object sender, EventArgs e)
+        private void pckLength_SelectedIndexChanged(object sender, EventArgs e) //kész
+         {
+            x = pckLength.SelectedIndex; //int x--> a picker-ben lévő int[] indexe DE!! ha nincs kitöltve -1
+
+
+             if (x != -1) szam = pckLength.Items[x]; //ha nincs kiválasztva szám, -1-et kapunk, így logikai vizsálat kell végezni
+
+             else
+             {
+                 DisplayAlert("Error!", "Please select a number!", "Ok");
+                 return;
+             }
+         }
+
+        private void cbSymbols_CheckedChanged(object sender, CheckedChangedEventArgs e)
         {
-            string szam = pckLength.Items[x];
-            DisplayAlert(szam, "Selected Item", "Ok");
+            if (cbSymbols.IsChecked)
+
+                valid = "@#$%_-{}[]()/'~,;:.*";
+            else return;
+            
+            
         }
-       */
+
+        private void cbNumbers_CheckedChanged(object sender, CheckedChangedEventArgs e)
+        {
+            if (cbNumbers.IsChecked)
+
+                valid += "0123456789";
+            else return;
+        }
     }
 }

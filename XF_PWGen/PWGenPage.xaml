@@ -14,7 +14,7 @@
             <Label Text="Password length:"/>
            
 
-            <Picker Title="Choose a number!" x:Name="pckLength" SelectedIndexChanged="btGenerate_Clicked">
+            <Picker Title="Choose a number!" x:Name="pckLength" SelectedIndexChanged="pckLength_SelectedIndexChanged">
                 <!--hány karakter hosszú legyen a pw + SelectedIndexChanged-del tudtam meghatározni, épp mi van kiválasztva -->
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:Int16}">
@@ -37,11 +37,11 @@
             <Grid ColumnDefinitions="0.75*,0.25*,1*"  RowDefinitions="4" VerticalOptions="CenterAndExpand" Margin="2"> <!--felosztás ponttal, nem vesszővel!!!4!-->
 
                 <Label Text="Include Symbols:" Grid.Row="1" Grid.Column="0" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/> <!--Táblázat három oszloppal, 1. Label, 2. ch.box, 3 label-->
-                <CheckBox x:Name="cbSymbols" Grid.Row="1" Grid.Column="1" VerticalOptions="Center" Color="Gray"/>
+                <CheckBox x:Name="cbSymbols" Grid.Row="1" Grid.Column="1" VerticalOptions="Center" Color="Gray" CheckedChanged="cbSymbols_CheckedChanged"/>
                 <Label Text="( @#$%_-* )" Grid.Row="1" Grid.Column="2" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
 
                 <Label Text="Include Numbers:" Grid.Row="2" Grid.Column="0" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
-                <CheckBox x:Name="cbNumbers" Grid.Row="2" Grid.Column="1" VerticalOptions="Center" Color="Gray"/>
+                <CheckBox x:Name="cbNumbers" Grid.Row="2" Grid.Column="1" VerticalOptions="Center" Color="Gray" CheckedChanged="cbNumbers_CheckedChanged"/>
                 <Label Text="( e.g. 123456 )" Grid.Row="2" Grid.Column="2" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
 
                 <Label Text="Include Lowercase Characters:" Grid.Row="3" Grid.Column="0" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
