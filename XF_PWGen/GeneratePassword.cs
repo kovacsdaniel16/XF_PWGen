@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 using Xamarin.Forms;
 
 namespace XF_PWGen
@@ -7,37 +9,55 @@ namespace XF_PWGen
     {
         public int length; //hány karakter a jelszó
         public string[] password; //string tömb a jelszó tárolására
-        public int[] numb; //int tömb a számok tárolására
-        public char[] lower; //...kisbetűk
-        public char[] upper; //...nagybetűk
-        public char[] spec; //....spec karakterek
-        public char[] exc; //...esetlegesen nem kívánt karakterek
+        public string numb; //int tömb a számok tárolására
+        public string lower; //...kisbetűk
+        public string upper; //...nagybetűk
+        public string spec; //....spec karakterek
+       // public string exc; //...esetlegesen nem kívánt karakterek
+
+       
 
         public GeneratePassword(int length)
         {
+            PWGenPage pgw = new PWGenPage();
+
             this.length = length;
+            length = Convert.ToInt32(pgw.szam);
            
             
             password = new string[length];
 
-            numb = new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            numb = "0123456789";
 
-            lower = new char[] {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z' };
+            lower = "abcdefghijklmnopqrstuvwxyz";
 
-            upper = new char[lower.Length];
-            for (int i = 0; i < lower.Length; i++)
-            {
-                upper[i] = Char.ToUpper(lower[i]);
-            }
+            upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-            spec = new char[] { '@','#','$','%','_','-',',','*', '{','}','[' ,']' , '(',')', '/', '~',';', ':', '.'};
+            spec = "@#$%_-{}[]()/'~,;:.*";
 
-            exc = new char[] { '{', '}', '[', ']', '(', ')', '/', '~', ';', ':', '.' };
+            //exc = "{}[]()/'~,;:.";
         }
 
-        internal static string getPassword()
+         public  string getPassword(int length)
         {
-            throw new NotImplementedException();
+            // throw new NotImplementedException();
+
+            PWGenPage pgw = new PWGenPage();
+
+
+
+            string valid = "asdfghjkléqwertzuioíyxcvbn";
+
+            StringBuilder res = new StringBuilder();
+
+            Random rnd = new Random();
+
+            while (0 < length--)
+            {
+                res.Append(valid[rnd.Next(valid.Length)]);
+            }
+            return res.ToString();
+
         }
 
 

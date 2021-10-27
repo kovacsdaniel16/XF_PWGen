@@ -22,11 +22,13 @@ namespace XF_PWGen
         //CheckBox UpperCase >> cbUpper
         //CheckBox Exclude >> cbExcl
 
-        char[] Password; //ebben a strinben fog tárolódni a jelszó
+        public string valid; //ebben a strinben fog tárolódni a jelszó
         int x; //a picker indexe
-        string szam; //a pickerben tárolt szám
-        
-        
+        public string szam; //a pickerben tárolt szám
+        //public List<string> valid;
+
+
+
         public PWGenPage()
         {
             InitializeComponent();
@@ -54,10 +56,39 @@ namespace XF_PWGen
 
             ////////////////////////////////////////////////////////
             GeneratePassword pg = new GeneratePassword(Convert.ToInt32(szam));
+            ////////////////////////////////////////////////////////////////
+            if (cbNumbers.IsChecked)
+            {
+                valid = pg.numb;
+            }
+            
+            if (cbLower.IsChecked)
+            {
+                valid += pg.lower;
+            }
+            if (cbUpper.IsChecked)
+            {
+                valid += pg.upper;
+            }
+            if (cbSymbols.IsChecked)
+            {
+                valid += pg.spec;
+            }
 
-           
+            /*   if (cbExcl.IsChecked)
+               {
+                   char[] seged = valid.ToCharArray();
+                   foreach (char karakter in seged)
+                   {
+                       if (karakter==)
+                       {
 
-            //edPassword.Text = 
+                       }
+                   }
+               } */
+
+
+            edPassword.Text = pg.getPassword(Convert.ToInt32(szam));
 
         }
 
@@ -73,6 +104,8 @@ namespace XF_PWGen
 
             }
             else DisplayAlert("Error", "Password field is empty", "Ok");
+
+          
 
 
         }
