@@ -22,12 +22,13 @@ namespace XF_PWGen
         //CheckBox UpperCase >> cbUpper
         //CheckBox Exclude >> cbExcl
 
-        public string symbols; //ebben a strinben fog tárolódni a jelszó karakterkészlete
-        public string numbers;
-        public string upper;
-        public string lower;
+        public string symbols; // spec karakterek
+        public string numbers; //számok (0-9)
+        public string upper; //kisbetűk
+        public string lower; //nagybetűk
+
         int x; //a pickerben tárolt számok indexe
-        public string szam; //a pickerben tárolt szám(string formában?)
+        public string szam; //a pickerben tárolt szám(string formában!!!!!!!!!!)
         
 
 
@@ -37,17 +38,17 @@ namespace XF_PWGen
             InitializeComponent();
         }
 
-        private void btGenerate_Clicked(object sender, EventArgs e) //kész
+        private void btGenerate_Clicked(object sender, EventArgs e) //GENERATE Gomb-> kész
         {
            
             GeneratePassword pg = new GeneratePassword(); //Ha megnyomom a GENERATE gombot: 1 meghívom a GeneratePassword osztályt
 
             pg.getcheckBoxes(symbols,numbers,lower,upper);
-            edPassword.Text = pg.getPassword(Convert.ToInt32(szam)); //az edPassword mezőbe betöltöm a generált jelszót.
+            edPassword.Text = pg.getPassword(Convert.ToInt32(szam)); //2. az edPassword mezőbe betöltöm a generált jelszót.
 
         }
 
-        private void btCopy_Command(object sender, EventArgs e) //kész
+        private void btCopy_Command(object sender, EventArgs e) //COPY Gomb-> kész
         {
             //ed.Password mezőt kellene vágólapra másolni
 
@@ -65,7 +66,7 @@ namespace XF_PWGen
 
         }
 
-        private void pckLength_SelectedIndexChanged(object sender, EventArgs e) //kész
+        private void pckLength_SelectedIndexChanged(object sender, EventArgs e) //Szám picker-> kész
          {
             x = pckLength.SelectedIndex; //int x--> a picker-ben lévő int[] indexe DE!! ha nincs kitöltve -1
 
@@ -81,10 +82,10 @@ namespace XF_PWGen
 
         private void cbSymbols_CheckedChanged(object sender, CheckedChangedEventArgs e)
         {
-            if (cbSymbols.IsChecked)
+            if (cbSymbols.IsChecked) //ha be van pipálva...
             {
                 symbols = "@#$%_-{}[]()/'~,;:.*";
-                cbExcl.IsEnabled = true;
+                cbExcl.IsEnabled = true; //az utolsó mező csak akkor használható, ha ez is be van pipálva
             }
 
 
@@ -121,30 +122,14 @@ namespace XF_PWGen
         private void cbExcl_CheckedChanged(object sender, CheckedChangedEventArgs e)
         {
             if (cbExcl.IsChecked)
-            {
-            }
-        }
 
+                symbols = "@#$%_-";
 
-        /*private void cbSymbols_CheckedChanged(object sender, CheckedChangedEventArgs e)
-        {
-            if (CbSymbols.IsChecked)
-
-                valid = "@#$%_-{}[]()/'~,;:.*";
-
-            else return;    
-            CbSymbols
+            else symbols = "@#$%_-{}[]()/'~,;:.*";
             
         }
 
-        private void cbNumbers_CheckedChanged(object sender, CheckedChangedEventArgs e)
-        {
-            if (cbNumbers.IsChecked)
 
-                valid += "0123456789";
-
-            else return;
-        }
-        */
+        
     }
 }

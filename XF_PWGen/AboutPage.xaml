@@ -4,13 +4,23 @@
              x:Class="XF_PWGen.AboutPage"
              Title="about">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Margin="20" VerticalOptions="Center">
 
-            <Label Text="V0.0.1"
-                HorizontalOptions="CenterAndExpand" />
+            
+            <Label/>
             <Label Text="(c) Kovács Dániel" HorizontalOptions="CenterAndExpand" />
             <Label Text="YPVT4O" HorizontalOptions="CenterAndExpand"/>
+            <Label/>
             <Label Text="Az alapötlet: https://passwordsgenerator.net" HorizontalOptions="CenterAndExpand"/>
+            <Label/>
+            <Label Text="GIT: https://github.com/kovacsdaniel16/XF_PWGen.git" HorizontalTextAlignment="Center"/>
+            <Label/>
+            <Label/>
+            <Label Text="V0.1.0"
+                HorizontalOptions="CenterAndExpand" />
+            <Label/>
+            <Label Text="2021" HorizontalTextAlignment="Center"/>
+
 
         </StackLayout>
     </ContentPage.Content>

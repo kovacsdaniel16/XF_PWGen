@@ -7,46 +7,24 @@ namespace XF_PWGen
 {
     internal class GeneratePassword
     {
-       
-       /* public string numb; //string tömb a számok tárolására
-        public string lower; //...kisbetűk
-        public string upper; //...nagybetűk
-        public string spec; //....spec karakterek */
-
+      
         public string value;
-
-       
 
         public GeneratePassword() //konstruktor
         {
-          
-           /* numb = "0123456789";
-
-            lower = "abcdefghijklmnopqrstuvwxyz";
-
-            upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
-            spec = "@#$%_-{}[]()/'~,;:.*";
-
-            //exc = "{}[]()/'~,;:.";
-            /* PWGenPage pgw = new PWGenPage();
-
-             if (pgw.CbSymbols.IsChecked)
-             {
-                 value = spec;
-             }
-            */
+                    
         }
 
         public  void getcheckBoxes(string symbols, string numbers, string lower, string upper)
+            //ez a metódus fűzi össze a felhasználó által megadott lehetőségeket
         {
             value = symbols+numbers+lower+upper;
         }
 
-         public string getPassword(int length)
+         public string getPassword(int length) //https://stackoverflow.com/questions/54991/generating-random-passwords
         {
           
-            if (!string.IsNullOrEmpty(value))
+            if (!string.IsNullOrEmpty(value)) 
             {
 
                 StringBuilder res = new StringBuilder();
