@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\XF_PWGen"
   ],
-  "SelectedNode": "\\XF_PWGen.sln",
+  "SelectedNode": "\\XF_PWGen\\PWGenPage.xaml.cs",
   "PreviewInSolutionExplorer": false
 }

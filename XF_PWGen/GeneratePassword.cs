@@ -7,26 +7,20 @@ namespace XF_PWGen
 {
     internal class GeneratePassword
     {
-       // public int length; //hány karakter a jelszó (a pwg osztályból) nem kell, mert a másik osztályból veszi
-       // public string[] password; //string tömb a jelszó tárolására
-        public string numb; //string tömb a számok tárolására
+       
+       /* public string numb; //string tömb a számok tárolására
         public string lower; //...kisbetűk
         public string upper; //...nagybetűk
-        public string spec; //....spec karakterek
+        public string spec; //....spec karakterek */
+
+        public string value;
 
        
 
-        public GeneratePassword(int length) //konstruktor
+        public GeneratePassword() //konstruktor
         {
-            PWGenPage pgw = new PWGenPage(); //meghíjuk a pgw osztályt
-
-            //this.length = length;
-            //length = Convert.ToInt32(pgw.szam);
-           
-            
-           // password = new string[length];
-
-            numb = "0123456789";
+          
+           /* numb = "0123456789";
 
             lower = "abcdefghijklmnopqrstuvwxyz";
 
@@ -35,27 +29,38 @@ namespace XF_PWGen
             spec = "@#$%_-{}[]()/'~,;:.*";
 
             //exc = "{}[]()/'~,;:.";
+            /* PWGenPage pgw = new PWGenPage();
+
+             if (pgw.CbSymbols.IsChecked)
+             {
+                 value = spec;
+             }
+            */
         }
 
-         public string getPassword(int length, string valid)
+        public  void getcheckBoxes(string symbols, string numbers, string lower, string upper)
         {
-            // throw new NotImplementedException();
+            value = symbols+numbers+lower+upper;
+        }
 
-            PWGenPage pgw = new PWGenPage();
-
-
-
-
-            StringBuilder res = new StringBuilder();
-
-            Random rnd = new Random();
-
-            while (0 < length--)
+         public string getPassword(int length)
+        {
+          
+            if (!string.IsNullOrEmpty(value))
             {
-                res.Append(valid[rnd.Next(valid.Length)]);
-            }
-            return res.ToString();
 
+                StringBuilder res = new StringBuilder();
+
+                Random rnd = new Random();
+
+                while (0 < length--)
+                {
+                    res.Append(value[rnd.Next(value.Length)]);
+                }
+                return res.ToString();
+            }
+            else return null;
+           
         }
 
 
