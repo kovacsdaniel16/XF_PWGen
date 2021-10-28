@@ -81,9 +81,20 @@ namespace XF_PWGen
 
         private void cbSymbols_CheckedChanged(object sender, CheckedChangedEventArgs e)
         {
-            if (cbSymbols.IsChecked) symbols = "@#$%_-{}[]()/'~,;:.*";
+            if (cbSymbols.IsChecked)
+            {
+                symbols = "@#$%_-{}[]()/'~,;:.*";
+                cbExcl.IsEnabled = true;
+            }
 
-            else symbols = null;
+
+            else
+
+            {
+                symbols = null;
+                cbExcl.IsEnabled = false;
+                cbExcl.IsChecked = false;
+            }
         }
 
         private void cbNumbers_CheckedChanged(object sender, CheckedChangedEventArgs e)
@@ -102,9 +113,16 @@ namespace XF_PWGen
 
         private void cbUpper_CheckedChanged(object sender, CheckedChangedEventArgs e)
         {
-            if (cbUpper.IsChecked) symbols = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            if (cbUpper.IsChecked) upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-            else symbols = null;
+            else upper = null;
+        }
+
+        private void cbExcl_CheckedChanged(object sender, CheckedChangedEventArgs e)
+        {
+            if (cbExcl.IsChecked)
+            {
+            }
         }
 
 
